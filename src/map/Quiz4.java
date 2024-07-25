@@ -35,41 +35,41 @@ public class Quiz4 {
 		System.out.println(map.size());
 		
 		// 학생별 총점
-		int sum1 = 0;
+		int sum = 0;
 		for(int i=1; i<map.size()+1; i++) {
 			Student student = map.get(1000 + i);
-			sum1 = student.eng + student.kor + student.math;
-			System.out.println("학생별 총점: " + sum1);
-			int summ = sum1 / 3;
+			sum = student.eng + student.kor + student.math;
+			System.out.println("학생별 총점: " + sum);
+			Double summ = sum / 3.0;
 			System.out.println("학생별 평균: " + summ);
 		}
 		
 		System.out.println();
 		
 		// 과목별 총점
+		int sum1 = 0;
 		int sum2 = 0;
 		int sum3 = 0;
-		int sum4 = 0;
 		for(int i=1; i<map.size()+1; i++) {
 			Student student = map.get(1000 + i);
-			sum2 = sum2 + student.kor;
+			sum1 = sum1 + student.kor;
 			
-			sum3 = sum3 + student.eng;
+			sum2 = sum2 + student.eng;
 			
-			sum4 = sum4 + student.math;
+			sum3 = sum3 + student.math;
 		}
-		float sum22 = sum2 / 3;
-		float sum33 = sum3 / 3;
-		float sum44 = sum4 / 3;
+		Double sum11 = sum1 / 3.0;
+		Double sum22 = sum2 / 3.0;
+		Double sum33 = sum3 / 3.0;
 		
-		System.out.println("국어 총점: " + sum2);
-		System.out.println("국어 총점: " + sum22);
+		System.out.println("국어 총점: " + sum1);
+		System.out.println("국어 평균: " + sum11);
 		
-		System.out.println("영어 총점: " + sum3);
-		System.out.println("영어 총점: " + sum33);
+		System.out.println("영어 총점: " + sum2);
+		System.out.println("영어 평균: " + sum22);
 		
-		System.out.println("수학 총점: " + sum4);
-		System.out.println("수학 총점: " + sum44);
+		System.out.println("수학 총점: " + sum3);
+		System.out.println("수학 평균: " + sum33);
 
 		
 		
@@ -93,6 +93,12 @@ class Student {
 		this.kor = kor;
 		this.math = math;
 		this.eng = eng;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", kor=" + kor + ", math=" + math
+				+ ", eng=" + eng + "]";
 	}
 	
 }
